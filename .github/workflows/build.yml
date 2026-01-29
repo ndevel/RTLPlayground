@@ -43,4 +43,4 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
-          files: output/rtlplayground.bin
+          files: output/rtlplayground.bin output/rtlplayground.img
