@@ -26,7 +26,7 @@ jobs:
         run: |
           echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
           cat <<EOF > release.txt
-          🚀 OpenWrt firmware for XG_040G_MD
+          🚀 Firmware for RTL837x
           ----------------------
           设备: RTL837x
           时间: $(date +"%Y-%m-%d %H:%M")
@@ -43,4 +43,4 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
-          files: output/*
+          files: output/rtlplayground.bin
