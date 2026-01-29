@@ -20,3 +20,27 @@ jobs:
           apt install make gcc sdcc xxd python-is-python3 libjson-c-dev -y
       - name: Make project
         run: make
+        
+      - name: Generate release tag
+        id: tag
+        run: |
+          echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+          cat <<EOF > release.txt
+          🚀 OpenWrt firmware for XG_040G_MD
+          ----------------------
+          设备: RTL837x
+          时间: $(date +"%Y-%m-%d %H:%M")
+          源码仓库: $REPO_URL
+          分支: $REPO_BRANCH
+          EOF
+          echo "status=success" >> $GITHUB_OUTPUT
+
+      - name: Upload firmware to release
+        uses: softprops/action-gh-release@v1
+        if: steps.tag.outputs.status == 'success' && !cancelled()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          body_path: release.txt
+          files: output/*
