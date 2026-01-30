@@ -31,7 +31,7 @@ html_data.c html_data.h: html tools
 $(VERSION_HEADER):
 	@echo "#ifndef VERSION_H" > $(VERSION_HEADER)
 	@echo "#define VERSION_H" >> $(VERSION_HEADER)
-	@echo "#define VERSION_SW \"v$(VERSION) >> $(VERSION_HEADER)
+	@echo "#define VERSION_SW \"v$(VERSION)\"" >> $(VERSION_HEADER)
 	@echo "#endif" >> $(VERSION_HEADER)
 
 httpd: html_data.h
