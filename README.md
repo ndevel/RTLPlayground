@@ -138,8 +138,8 @@ The device will perform some examples and provide a minimal console, the
 documentation of which can be found in the source code rtlplayground.c`.
 
 ## The web-interface
-The web-interface can be reached under the [default 192.168.10.247](http://192.168.10.247).
-The default password is `1234`.
+The web-interface can be reached under the [default 192.168.2.1](http://192.168.2.1).
+The default password is `admin`.
 
 ## The command line
 The command line is very rudimentary and mostly for testing purposes.

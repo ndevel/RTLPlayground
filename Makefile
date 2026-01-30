@@ -1,6 +1,6 @@
 BOOTLOADER_ADDRESS=0x100
 
-VERSION=0.1.0
+VERSION=2.0.0
 IMAGESIZE = 524288
 CONFIG_LOCATION = 458752
 HTML_LOCATION = 262144
@@ -31,7 +31,7 @@ html_data.c html_data.h: html tools
 $(VERSION_HEADER):
 	@echo "#ifndef VERSION_H" > $(VERSION_HEADER)
 	@echo "#define VERSION_H" >> $(VERSION_HEADER)
-	@echo "#define VERSION_SW \"v$(VERSION)-g$(shell git rev-parse --short HEAD)\"" >> $(VERSION_HEADER)
+	@echo "#define VERSION_SW \"v$(VERSION) >> $(VERSION_HEADER)
 	@echo "#endif" >> $(VERSION_HEADER)
 
 httpd: html_data.h

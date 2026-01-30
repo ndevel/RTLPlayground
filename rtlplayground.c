@@ -41,8 +41,8 @@ void crc16(__xdata uint8_t *v) __naked;
    For the following frequencies, divider settings are known
    and can be selected on all known HW (Register 0x6040)
 */
-#define CLOCK_HZ 125000000
-//#define CLOCK_HZ 20800000
+//#define CLOCK_HZ 125000000
+#define CLOCK_HZ 20800000
 
 // Derive the divider settings for the internal clock
 #if CLOCK_HZ == 20800000
