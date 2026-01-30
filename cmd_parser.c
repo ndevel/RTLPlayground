@@ -958,7 +958,7 @@ void cmd_parser(void) __banked
 }
 
 #define FLASH_READ_BURST_SIZE 0x100
-#define PASSWORD "1234"
+#define PASSWORD "admin"
 void execute_config(void) __banked
 {
 	__xdata uint32_t pos = CONFIG_START;

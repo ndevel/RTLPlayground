@@ -12,7 +12,7 @@
 #include "../version.h"
 
 #define SESSION_ID "1234567890ab"
-#define PASSWORD "1234"
+#define PASSWORD "admin"
 #define SESSION_TIMEOUT 2000
 
 #define PORTS 9
@@ -121,7 +121,7 @@ void send_basic_info(int socket)
 {
 	char *response = "HTTP/1.1 200 OK\r\n"
 		    "Content-Type: application/json; charset=UTF-8\r\n\r\n"
-			"{\"ip_address\":\"192.168.2.1\",\"ip_gateway\":\"192.168.2.254\",\"ip_netmask\":\"255.255.255.0\",\"mac_address\":\"1c:2a:a3:23:00:02\",\"sw_ver\":\"" VERSION_SW "\",\"hw_ver\":\"HYWS-SGT0204S\"}";
+			"{\"ip_address\":\"192.168.2.254\",\"ip_gateway\":\"192.168.2.1\",\"ip_netmask\":\"255.255.255.0\",\"mac_address\":\"1c:2a:a3:23:00:02\",\"sw_ver\":\"" VERSION_SW "\",\"hw_ver\":\"HYWS-SGT0204S\"}";
 	write(socket, response, strlen(response));
 }
 
