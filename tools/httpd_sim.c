@@ -12,7 +12,7 @@
 #include "../version.h"
 
 #define SESSION_ID "1234567890ab"
-#define PASSWORD "1234"
+#define PASSWORD "admin"
 #define SESSION_TIMEOUT 2000
 
 #define PORTS 9
